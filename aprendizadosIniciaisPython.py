@@ -321,6 +321,13 @@ else:
 
 
 
+     #LIST COMPRESSION COM A FUNÇÃO LOWER
+    linguagens = ["Python","Java","Javascript", "C","C#", "C++", "Swift", "Go", "Kotlin"]
+    print("Antes da listcomp = ", linguagens)
+    linguagens = [item.lower() for item in linguagens]
+    print("\nDepois da listcomp = ", linguagens)
+
+
 
 
 
