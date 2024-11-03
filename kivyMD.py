@@ -132,5 +132,28 @@ class CalculatorApp(BoxLayout):
             self.ids.input_field.text  = str(result)
         except Exception as  e:
             self.ids.input_field.text = "Erro"
+   #Defininfo a classe CalculatorMDApp que herda de MDApp
+class CalculatorMDApp(MDApp):
+    #Metodo chamado para construir o Aplicativo
+    def build(self):
+        return  CalculatorApp()
+    #MÉTODOS CHAMADOS PARA INTERAGIR COM INSTANCIA DE  CALCUATORAPP
+    def on_number_press(self, number):
+        self.root.on_number_press(number)
+    def on_operator_press(self, operator):
+        self.root.on_number_press(operator)
+
+    def clear_input(self):
+        self.root.clear_input()
+
+    def calculate_result(self):
+        self.root.calculate_result()
+
+#VERIFICANDO SE O SCRIPT ESTÁ SENDO EXECUTADO DIRETAMENTE
+if _name_ == "_main_":
+   #Carregando a string KV USANDO BUILDER
+   Builder.load_string(KV)
+   # Iniciando o aplicativo MD
+   CalculatorMDApp.run()
 
 
